@@ -13,6 +13,6 @@ describe "Client" do
     :uid => "992817"
     )}
   it "should get activity metrics by day" do
-  	puts user.get_activity_by(1373310190)
+  	behaves_like_hash user.get_activity_by(1373310190)
   end
 end
