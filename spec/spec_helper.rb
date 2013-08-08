@@ -13,6 +13,12 @@ require_relative "../test/helpers/stubbed_withings_api"
 API = Withings::Api
 API_MODULE = API
 
+def behaves_like_hash response
+    expect(response).not_to be_nil
+    expect(response).to be_kind_of (Hash)
+    expect(response["status"]).to eq(0) #success
+end
+
 def puts_http_request
   wrapped = MethodAliaser.alias_it(Net::HTTP, :transport_request) do |aliased, *arguments|
     puts "#{arguments.first.path}"

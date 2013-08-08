@@ -1,9 +1,5 @@
 require 'spec_helper'
 require 'json'
-def behaves_like_hash response
-    expect(response).not_to be_nil
-    expect(response).to be_kind_of (Hash)
-end
 describe "Client" do
   let(:user){Withings::Api::Client.new(
     :consumer_key => "08943c64c3ccfe86d5edb40c8db6ddbbc43b6f58779c77d2b02454284db7ec",
