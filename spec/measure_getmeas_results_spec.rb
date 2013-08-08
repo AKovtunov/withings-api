@@ -63,11 +63,11 @@ describe API::MeasurementGroup do
       end
 
       it "date_raw == 1222930968" do
-        subject.date_raw.should == 1222930968
+        expect(subject.date_raw).to eq(1222930968)
       end
 
       it "date == Time.at(1222930968)" do
-        subject.date.should == Time.at(1222930968)
+        expect(subject.date).to eq(Time.at(1222930968))
       end
 
       it "measurements == []" do
@@ -89,11 +89,11 @@ end
 describe API::MeasureGetmeasResults do
   shared_examples_for "Sample Measure/Getmeas Result" do
     it "update_time_raw Should Be 1249409679" do
-      subject.update_time_raw.should be(1249409679)
+      expect(subject.update_time_raw).to eq(1249409679)
     end
 
     it "update_time == Time.at(1249409679)" do
-      subject.update_time.should == Time.at(1249409679)
+      expect(subject.update_time).to eq(Time.at(1249409679))
     end
 
     it "more? Should Be false" do
